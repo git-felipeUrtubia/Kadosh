@@ -7,9 +7,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v4
-
       - name: Deploy a EC2 via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -17,26 +14,37 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            echo "🚀 Deploy iniciado"
-            # Actualizar e instalar Apache si no está
+            echo "🚀 Deploy de prueba iniciado..."
+            
+            # 1. Actualizar e instalar Apache, Git y Node.js
             sudo yum update -y
             sudo yum install -y httpd git
+            curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
+            sudo yum install -y nodejs
+            
             sudo systemctl start httpd
             sudo systemctl enable httpd
-            
-            # Cambiar permisos para que podamos trabajar en la carpeta
             sudo chown -R ec2-user:ec2-user /var/www/html
             
-            # Lógica de despliegue
+            # 2. Lógica de despliegue (Clonar o Actualizar)
             if [ ! -d "/var/www/html/.git" ]; then
-                echo "📁 Carpeta nueva, clonando por primera vez..."
+                echo "📁 Clonando por primera vez..."
                 sudo rm -rf /var/www/html/*
-                sudo git clone https://github.com/git-felipeUrtubia/Kadosh.git /var/www/html
+                git clone https://github.com/git-felipeUrtubia/Kadosh.git /var/www/html
             else
-                echo "🔄 El proyecto ya existe, actualizando código..."
+                echo "🔄 Actualizando código..."
                 cd /var/www/html
                 git fetch origin
                 git reset --hard origin/main
             fi
             
-            echo "✅ ¡Web actualizada con éxito!"
+            # 3. LA MAGIA: Compilar el código de React en el servidor
+            echo "⚙️ Instalando dependencias y compilando..."
+            cd /var/www/html
+            npm install
+            npm run build
+            
+            # 4. Mover el código compilado a la raíz para que Apache lo lea
+            cp -r dist/* /var/www/html/
+            
+            echo "✅ ¡Web compilada y actualizada con éxito!"
