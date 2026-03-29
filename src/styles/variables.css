@@ -7,7 +7,8 @@
   /* Tonos Grises para modo claro */
   --slate-50:  #f8fafc; 
   --slate-100: #f1f5f9; 
-  --slate-200: #e2e8f0; 
+  --slate-200: #e2e8f0;
+  --slate-400: #bec1c7;
   --slate-600: #475569; 
   --slate-800: #1e293b; 
   --slate-900: #0f172a; 
@@ -18,6 +19,7 @@
   /* Tonos Grises para modo oscuro */
   --dark-bg:        var(--slate-950); /* Antes era slate-900 */
   --dark-bg-accent: var(--slate-900); /* Antes era slate-800 */
+  --clair-bg:       var(--slate-400);
   --dark-border:    #1e293b;          /* slate-800 para bordes sutiles */
   --dark-text:      #f1f5f9; 
   --dark-text-dim:  #94a3b8; 
@@ -46,11 +48,13 @@
 [data-theme='dark'] {
   --bg-primary:    var(--dark-bg);
   --bg-secondary:  var(--dark-bg-accent);
+  --bg-tercero:    var(--clair-bg);
   --text-main:     var(--dark-text);
   --text-dim:      var(--dark-text-dim);
   --border-color:  var(--dark-border);
   
-  --action-color:  #60a5fa; /* Un azul un poco más vibrante para el modo oscuro */
+  --action-color:  #60a5fa;
+  --action-color-v2:  var(--slate-900);
   --action-hover:  #93c5fd;
 
   /* Efectos Especiales Oscuros */

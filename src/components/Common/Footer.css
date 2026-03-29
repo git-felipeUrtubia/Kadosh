@@ -1,0 +1,277 @@
+/* src/components/Common/Footer/Footer.css */
+
+/* --- Variables Locales para el Footer (Tonos Oscuros) --- */
+:root {
+    --ft-bg-main: #111827;
+    /* Gris azulado muy oscuro (bg) */
+    --ft-bg-bottom: #0f172a;
+    /* Un tono más oscuro para el bottom bar */
+    --ft-text-main: #f3f4f6;
+    /* Blanco grisáceo (texto principal) */
+    --ft-text-dim: #9ca3af;
+    /* Gris claro (descripciones y enlaces) */
+    --ft-border: rgba(255, 255, 255, 0.08);
+    /* Borde sutil */
+}
+
+.main-footer {
+    background-color: var(--ft-bg-main);
+    color: var(--ft-text-main);
+    border-top: 1px solid var(--ft-border);
+    width: 100%;
+    margin-top: auto;
+    /* Empuja el footer abajo si hay poco contenido */
+}
+
+/* --- Contenedor Principal (Grid Layout) --- */
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 80px 24px 60px;
+    display: grid;
+    /* Configuración por defecto (Escritorio) */
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 48px;
+}
+
+/* --- Estilos Generales de Sección --- */
+.footer-section h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ft-text-main);
+    margin: 0 0 24px 0;
+    letter-spacing: -0.5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-section a {
+    color: var(--ft-text-dim);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+/* Efecto hover usando el azul de acción de tu sitio */
+.footer-section a:hover {
+    color: var(--action-color);
+    transform: translateX(3px);
+}
+
+/* --- Sección 1: Brand & Social --- */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-right: 40px;
+}
+
+/* Reutilizamos los estilos del logo que ya tienes */
+.footer-brand .nav-brand {
+    margin-bottom: 8px;
+}
+
+.footer-brand .brand-text {
+    color: white;
+}
+
+.footer-brand .thin {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-description {
+    color: var(--ft-text-dim);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--ft-border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--ft-text-main);
+    transition: all 0.2s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--action-color);
+    color: white;
+    border-color: var(--action-color);
+    transform: translateY(-3px);
+}
+
+/* --- Sección 4: Contacto --- */
+.footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--ft-text-dim);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.footer-icon {
+    font-size: 1.1rem;
+    color: var(--action-color);
+    /* Iconos resaltados en azul */
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* --- Barra Inferior de Copyright --- */
+.footer-bottom {
+    background-color: var(--ft-bg-bottom);
+    border-top: 1px solid var(--ft-border);
+    padding: 24px 24px;
+}
+
+.footer-bottom-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--ft-text-dim);
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.designer-tag {
+    opacity: 0.7;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES - RESPONSIVIDAD
+   ========================================================================== */
+
+/* --- Tablets (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    .footer-container {
+        /* Pasamos de 4 columnas a 2 columnas principales */
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        padding: 60px 24px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        /* Ocupa todo el ancho arriba */
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    .footer-brand .nav-brand {
+        justify-content: center;
+    }
+}
+
+/* --- Móviles Generales (max-width: 768px) --- */
+@media (max-width: 768px) {
+    .footer-container {
+        /* Una sola columna, todo apilado */
+        grid-template-columns: 1fr;
+        text-align: center;
+        align-items: center;
+        gap: 48px;
+        padding: 60px 20px 40px;
+    }
+
+    .footer-section h4 {
+        margin-bottom: 18px;
+    }
+
+    .footer-section ul {
+        align-items: center;
+        /* Centra los textos de los enlaces */
+    }
+
+    .footer-section a:hover {
+        transform: none;
+        /* Quitamos el translateX en móvil */
+        color: var(--action-color);
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-contact li {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-bottom-container {
+        flex-direction: column;
+        /* Apila el copyright y el tag */
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* --- AJUSTE ESPECÍFICO PARA 390x844 (Móviles Modernos) --- */
+@media (max-width: 420px) {
+    .footer-container {
+        /* Reducimos un poco los paddings internos para aprovechar espacio */
+        padding: 50px 16px 30px;
+        gap: 40px;
+    }
+
+    .footer-brand .nav-brand {
+        transform: scale(0.9);
+        /* Logo ligeramente más pequeño */
+    }
+
+    .footer-description {
+        font-size: 0.9rem;
+        /* Texto un poco más compacto */
+        padding: 0 10px;
+    }
+
+    /* Hacemos los enlaces un poco más altos para que sea fácil tocarlos */
+    .footer-section ul {
+        gap: 16px;
+    }
+
+    .footer-section a {
+        font-size: 0.9rem;
+        padding: 4px 0;
+        /* Aumenta el área táctil (touch target) */
+    }
+
+    /* Ajuste para iconos de contacto apilados */
+    .footer-contact li {
+        flex-direction: row;
+        gap: 6px;
+        font-size: 0.9rem;
+    }
+
+    .footer-icon {
+        margin-top: 0;
+        margin-bottom: 2px;
+    }
+}

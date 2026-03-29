@@ -174,6 +174,11 @@
   color: #60a5fa; /* El azul más claro que configuramos para Dark Mode */
 }
 
+[data-theme='dark'] .action-btn:hover {
+  color: var(--action-color-v2);
+  background-color: var(--bg-tercero);
+}
+
 /* ==========================================================================
    DISEÑO RESPONSIVO - TABLETS Y MÓVILES
    ========================================================================== */

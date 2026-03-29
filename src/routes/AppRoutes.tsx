@@ -4,6 +4,7 @@ import { Home } from "../pages/Home";
 import { NavBar } from "../components/Common/NavBar";
 import { Login } from "../pages/Login";
 import { NotFound } from "../pages/NotFound";
+import { Footer } from "../components/Common/Footer";
 
 
 
@@ -12,6 +13,7 @@ const MainLayout = () => {
         <>
             <NavBar />
             <Outlet />
+            <Footer />
         </>
     )
 }
