@@ -1,0 +1,42 @@
+name: Deploy Apache EC2
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Deploy a EC2 via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            echo "🚀 Deploy iniciado"
+            # Actualizar e instalar Apache si no está
+            sudo yum update -y
+            sudo yum install -y httpd git
+            sudo systemctl start httpd
+            sudo systemctl enable httpd
+            
+            # Cambiar permisos para que podamos trabajar en la carpeta
+            sudo chown -R ec2-user:ec2-user /var/www/html
+            
+            # Lógica de despliegue
+            if [ ! -d "/var/www/html/.git" ]; then
+                echo "📁 Carpeta nueva, clonando por primera vez..."
+                sudo rm -rf /var/www/html/*
+                sudo git clone https://github.com/git-felipeUrtubia/Kadosh.git /var/www/html
+            else
+                echo "🔄 El proyecto ya existe, actualizando código..."
+                cd /var/www/html
+                git fetch origin
+                git reset --hard origin/main
+            fi
+            
+            echo "✅ ¡Web actualizada con éxito!"
