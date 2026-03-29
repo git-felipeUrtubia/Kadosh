@@ -214,3 +214,220 @@
 [data-theme='dark'] .login-footer a:hover {
     color: #60a5fa;
 }
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO - TABLETS Y MÓVILES
+   ========================================================================== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .login-wrapper {
+        max-width: 450px;
+        padding: 36px 28px;
+        border-radius: 18px;
+    }
+
+    .login-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .login-header p {
+        font-size: 0.9rem;
+    }
+
+    .auth-input-group label {
+        font-size: 0.8rem;
+    }
+
+    .input-with-icon input {
+        padding: 12px 14px 12px 40px;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+
+    .input-icon {
+        font-size: 1.1rem;
+        left: 14px;
+    }
+
+    .login-options {
+        font-size: 0.8rem;
+    }
+
+    .login-submit-btn {
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Teléfonos (móviles) - 768px y menores */
+@media (max-width: 768px) {
+    .login-wrapper {
+        max-width: 100%;
+        padding: 32px 24px;
+        border-radius: 16px;
+        margin: 16px;
+    }
+
+    .login-header {
+        margin-bottom: 28px;
+    }
+
+    .login-header h3 {
+        font-size: 1.4rem;
+        margin-bottom: 6px;
+    }
+
+    .login-header p {
+        font-size: 0.85rem;
+    }
+
+    .login-form {
+        gap: 18px;
+    }
+
+    .auth-input-group label {
+        font-size: 0.8rem;
+    }
+
+    .input-with-icon input {
+        padding: 11px 13px 11px 38px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+
+    .input-icon {
+        font-size: 1rem;
+        left: 12px;
+    }
+
+    .login-options {
+        gap: 0;
+        margin-top: -8px;
+    }
+
+    .forgot-link {
+        font-size: 0.8rem;
+    }
+
+    .checkbox-container {
+        gap: 6px;
+        font-size: 0.8rem;
+    }
+
+    .checkbox-container input {
+        width: 14px;
+        height: 14px;
+    }
+
+    .login-submit-btn {
+        padding: 12px;
+        font-size: 0.9rem;
+        gap: 8px;
+    }
+
+    .btn-icon {
+        font-size: 1rem;
+    }
+
+    .login-footer {
+        margin-top: 20px;
+        padding-top: 16px;
+    }
+
+    .login-footer p {
+        font-size: 0.85rem;
+    }
+
+    .login-footer a {
+        font-size: 0.85rem;
+    }
+}
+
+/* Teléfonos muy pequeños (< 480px) */
+@media (max-width: 480px) {
+    .login-wrapper {
+        padding: 28px 20px;
+        border-radius: 12px;
+        margin: 12px;
+    }
+
+    .login-header {
+        margin-bottom: 24px;
+    }
+
+    .login-header h3 {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+    }
+
+    .login-header p {
+        font-size: 0.8rem;
+    }
+
+    .login-form {
+        gap: 16px;
+    }
+
+    .auth-input-group {
+        gap: 6px;
+    }
+
+    .auth-input-group label {
+        font-size: 0.75rem;
+        margin-left: 2px;
+    }
+
+    .input-with-icon input {
+        padding: 10px 12px 10px 36px;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+
+    .input-icon {
+        font-size: 0.95rem;
+        left: 10px;
+    }
+
+    .login-options {
+        margin-top: -10px;
+        margin-bottom: 6px;
+    }
+
+    .forgot-link {
+        font-size: 0.75rem;
+    }
+
+    .checkbox-container {
+        gap: 5px;
+        font-size: 0.75rem;
+    }
+
+    .checkbox-container input {
+        width: 13px;
+        height: 13px;
+    }
+
+    .login-submit-btn {
+        padding: 10px;
+        font-size: 0.85rem;
+        gap: 6px;
+    }
+
+    .btn-icon {
+        font-size: 0.95rem;
+    }
+
+    .login-footer {
+        margin-top: 18px;
+        padding-top: 14px;
+    }
+
+    .login-footer p {
+        font-size: 0.8rem;
+    }
+
+    .login-footer a {
+        font-size: 0.8rem;
+    }
+}

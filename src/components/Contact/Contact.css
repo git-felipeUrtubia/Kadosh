@@ -25,10 +25,36 @@
    DISEÑO RESPONSIVO (Móviles y Tablets)
    ========================================================================== */
 
-/* Cuando la pantalla sea menor a 900px, pasamos a 1 sola columna */
+/* Tablets (768px - 900px) */
 @media (max-width: 900px) {
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 32px;
+    }
+
+    .contact-section {
+        padding: 60px 24px;
+    }
+}
+
+/* Teléfonos (móviles) - 768px y menores */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 40px 16px;
+    }
+
+    .contact-grid {
+        gap: 28px;
+    }
+}
+
+/* Teléfonos muy pequeños (< 480px) */
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 32px 12px;
+    }
+
+    .contact-grid {
+        gap: 24px;
     }
 }

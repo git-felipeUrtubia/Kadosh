@@ -173,3 +173,81 @@
 [data-theme='dark'] .login-btn:hover {
   color: #60a5fa; /* El azul más claro que configuramos para Dark Mode */
 }
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO - TABLETS Y MÓVILES
+   ========================================================================== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 0 24px;
+  }
+
+  .brand-text {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    gap: 24px;
+  }
+
+  .nav-link {
+    font-size: 0.75rem;
+  }
+}
+
+/* Teléfonos (móviles) - 768px y menores */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 16px;
+    height: 64px;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.8px;
+  }
+
+  .action-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Teléfonos muy pequeños (< 480px) */
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 12px;
+    height: 56px;
+  }
+
+  .brand-text {
+    font-size: 0.9rem;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-size: 0.65rem;
+    letter-spacing: 0.6px;
+  }
+
+  .action-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}

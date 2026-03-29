@@ -19,3 +19,34 @@
   align-items: stretch; 
   justify-content: center;
 }
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO - TABLETS Y MÓVILES
+   ========================================================================== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2rem;
+    padding: 1.5rem 20px;
+  }
+}
+
+/* Teléfonos (móviles) - 768px y menores */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 16px;
+  }
+}
+
+/* Teléfonos muy pequeños (< 480px) */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem 12px;
+  }
+}

@@ -96,3 +96,94 @@
   outline: 1px solid rgba(59, 130, 246, 0.3);
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
 }
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO - TABLETS Y MÓVILES
+   ========================================================================== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .dock-nav {
+    padding: 16px;
+  }
+
+  .dock-item {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .dock-icon {
+    font-size: 1.1rem;
+  }
+
+  .dock-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.6px;
+  }
+
+  .dock-divider {
+    height: 16px;
+  }
+}
+
+/* Teléfonos (móviles) - 768px y menores */
+@media (max-width: 768px) {
+  .dock-nav {
+    padding: 12px;
+  }
+
+  .dock-container {
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  .dock-item {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .dock-icon {
+    font-size: 1rem;
+  }
+
+  .dock-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+
+  .dock-divider {
+    height: 14px;
+    margin: 0 2px;
+  }
+}
+
+/* Teléfonos muy pequeños (< 480px) */
+@media (max-width: 480px) {
+  .dock-nav {
+    padding: 8px;
+  }
+
+  .dock-container {
+    padding: 2px 4px;
+    border-radius: 8px;
+  }
+
+  .dock-item {
+    padding: 4px 8px;
+    gap: 4px;
+  }
+
+  .dock-icon {
+    font-size: 0.9rem;
+  }
+
+  .dock-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3px;
+  }
+
+  .dock-divider {
+    height: 12px;
+    margin: 0 2px;
+  }
+}

@@ -151,3 +151,171 @@
     color: #60a5fa;
     /* Azul vibrante para los iconos en dark mode */
 }
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO - TABLETS Y MÓVILES
+   ========================================================================== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .contact-info-wrapper {
+        padding: 32px;
+    }
+
+    .info-header {
+        margin-bottom: 28px;
+    }
+
+    .info-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .info-header p {
+        font-size: 0.9rem;
+    }
+
+    .info-list {
+        gap: 20px;
+    }
+
+    .icon-box {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+    }
+
+    .info-text strong {
+        font-size: 0.85rem;
+    }
+
+    .info-text span {
+        font-size: 0.9rem;
+    }
+}
+
+/* Teléfonos (móviles) - 768px y menores */
+@media (max-width: 768px) {
+    .contact-info-wrapper {
+        padding: 28px;
+        border-radius: 16px;
+    }
+
+    .info-header {
+        margin-bottom: 24px;
+    }
+
+    .info-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .info-header p {
+        font-size: 0.85rem;
+    }
+
+    .info-list {
+        gap: 18px;
+    }
+
+    .info-item {
+        gap: 14px;
+    }
+
+    .icon-box {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        border-radius: 8px;
+    }
+
+    .info-text strong {
+        font-size: 0.8rem;
+    }
+
+    .info-text span {
+        font-size: 0.8rem;
+    }
+
+    .social-section {
+        padding-top: 24px;
+        gap: 10px;
+    }
+
+    .social-section strong {
+        font-size: 0.85rem;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}
+
+/* Teléfonos muy pequeños (< 480px) */
+@media (max-width: 480px) {
+    .contact-info-wrapper {
+        padding: 24px;
+        border-radius: 12px;
+    }
+
+    .info-header {
+        margin-bottom: 20px;
+    }
+
+    .info-header h2 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .info-header p {
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+
+    .info-list {
+        gap: 16px;
+    }
+
+    .info-item {
+        gap: 12px;
+    }
+
+    .icon-box {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        border-radius: 6px;
+    }
+
+    .info-text strong {
+        font-size: 0.75rem;
+    }
+
+    .info-text span {
+        font-size: 0.75rem;
+    }
+
+    .social-section {
+        padding-top: 20px;
+        gap: 8px;
+    }
+
+    .social-section strong {
+        font-size: 0.8rem;
+    }
+
+    .social-links {
+        gap: 8px;
+    }
+
+    .social-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+}

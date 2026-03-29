@@ -122,3 +122,86 @@
   color: #60a5fa; /* Azul claro para mejor legibilidad */
   box-shadow: none;
 }
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO - TABLETS Y MÓVILES
+   ========================================================================== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .catalog-header {
+    margin: 48px 0;
+  }
+
+  .contact-header {
+    margin: 48px 24px;
+  }
+
+  .contact-container {
+    padding: 16px 0;
+  }
+}
+
+/* Teléfonos (móviles) - 768px y menores */
+@media (max-width: 768px) {
+  .catalog-header {
+    margin: 40px 0;
+    padding: 0 16px;
+  }
+
+  .catalog-container {
+    padding: 12px 0;
+  }
+
+  .contact-header {
+    margin: 32px 16px;
+  }
+
+  .contact-container {
+    padding: 12px 0;
+  }
+
+  .concept-tag {
+    padding: 5px 12px;
+    font-size: 0.65rem;
+  }
+
+  .contact-badge {
+    padding: 5px 12px;
+    font-size: 0.65rem;
+  }
+}
+
+/* Teléfonos muy pequeños (< 480px) */
+@media (max-width: 480px) {
+  .catalog-header {
+    margin: 32px 0;
+    padding: 0 12px;
+    gap: 12px;
+  }
+
+  .catalog-container {
+    padding: 10px 0;
+  }
+
+  .contact-header {
+    margin: 24px 12px;
+    gap: 12px;
+  }
+
+  .contact-container {
+    padding: 10px 0;
+  }
+
+  .concept-tag {
+    padding: 4px 10px;
+    font-size: 0.6rem;
+    letter-spacing: 0.8px;
+  }
+
+  .contact-badge {
+    padding: 4px 10px;
+    font-size: 0.6rem;
+    letter-spacing: 0.8px;
+  }
+}

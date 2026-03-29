@@ -220,3 +220,159 @@
   background-color: var(--white);
   transform: scale(1.2); /* Un poco más grande modernos pegando las letras */
 }
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO - TABLETS Y MÓVILES
+   ========================================================================== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .hero-container {
+    padding: 24px;
+  }
+
+  .carousel-view {
+    height: 50vh;
+    border-radius: 12px;
+  }
+
+  .slide-content-overlay {
+    padding: 40px;
+  }
+
+  .text-content {
+    max-width: 400px;
+  }
+
+  .slide-title {
+    font-size: 2rem;
+  }
+
+  .slide-subtitle {
+    font-size: 0.7rem;
+  }
+
+  .slide-description {
+    font-size: 0.85rem;
+  }
+}
+
+/* Teléfonos (móviles) - 768px y menores */
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 16px;
+  }
+
+  .carousel-view {
+    height: 40vh;
+    border-radius: 8px;
+  }
+
+  .slide-content-overlay {
+    padding: 24px;
+  }
+
+  .text-content {
+    max-width: 100%;
+    gap: 8px;
+  }
+
+  .slide-title {
+    font-size: 1.6rem;
+  }
+
+  .slide-subtitle {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+  }
+
+  .slide-description {
+    font-size: 0.75rem;
+  }
+
+  .slide-actions {
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.7rem;
+  }
+
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .carousel-pagination {
+    right: 24px;
+    gap: 6px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Teléfonos muy pequeños (< 480px) */
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 8px;
+  }
+
+  .carousel-view {
+    height: 35vh;
+  }
+
+  .slide-content-overlay {
+    padding: 16px;
+  }
+
+  .text-content {
+    gap: 6px;
+  }
+
+  .slide-title {
+    font-size: 1.3rem;
+    letter-spacing: -0.5px;
+  }
+
+  .slide-subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+  }
+
+  .slide-description {
+    font-size: 0.7rem;
+    line-height: 1.4;
+  }
+
+  .slide-actions {
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .btn {
+    padding: 6px 12px;
+    font-size: 0.65rem;
+    border-radius: 16px;
+  }
+
+  .nav-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .carousel-pagination {
+    right: 16px;
+    gap: 4px;
+  }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+  }
+}
