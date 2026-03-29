@@ -1,0 +1,153 @@
+/* src/components/Contact/ContactInfo.css */
+
+.contact-info-wrapper {
+    background-color: var(--bg-secondary);
+    /* Un gris/azul muy suave */
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: var(--shadow-sm);
+}
+
+/* --- Cabecera --- */
+.info-header {
+    margin-bottom: 32px;
+}
+
+.info-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 12px 0;
+    letter-spacing: -0.5px;
+}
+
+.info-header p {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Lista de Contacto --- */
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    /* Alinea el icono con el texto */
+    gap: 16px;
+}
+
+/* El cuadrito que contiene el icono */
+.icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-primary);
+    /* Destaca sobre el fondo secundario */
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--action-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease;
+}
+
+.info-item:hover .icon-box {
+    transform: translateY(-2px);
+    border-color: var(--action-color);
+}
+
+/* Textos al lado del icono */
+.info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-text strong {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.info-text span {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+}
+
+/* --- Sección Redes Sociales --- */
+.social-section {
+    margin-top: auto;
+    /* Empuja las redes sociales hacia abajo si hay espacio sobrante */
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-section strong {
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* Botones circulares */
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    background-color: var(--action-color);
+    color: white;
+    border-color: var(--action-color);
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   ADAPTACIÓN MODO OSCURO
+   ========================================================================== */
+[data-theme='dark'] .contact-info-wrapper {
+    background-color: rgba(15, 23, 42, 0.4);
+    /* Un fondo muy oscuro y sutil */
+    backdrop-filter: blur(12px);
+}
+
+[data-theme='dark'] .icon-box,
+[data-theme='dark'] .social-btn {
+    background-color: rgba(30, 41, 59, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .icon-box {
+    color: #60a5fa;
+    /* Azul vibrante para los iconos en dark mode */
+}

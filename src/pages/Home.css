@@ -1,0 +1,124 @@
+/* ==========================================================================
+   SECCIÓN DE CATALOGO
+   ========================================================================== */
+
+.catalog-container {
+  padding: 16px 0;
+}
+
+.catalog-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 64px 0;
+  gap: 16px;
+}
+
+/* --- El Badge Superior --- */
+.concept-tag {
+  background-color: var(--action-color);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+}
+
+/* --- Título Principal --- */
+.main-slogan {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--text-main);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+/* --- Palabra con Énfasis (Italic Elegante) --- */
+.main-slogan span {
+  font-family: 'Playfair Display', serif; /* O cualquier Serif que tengas */
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-dim);
+  letter-spacing: 0;
+  margin-left: 5px;
+}
+
+/* ==========================================================================
+   SECCIÓN DE CONTACTO
+   ========================================================================== */
+
+.contact-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 16px 0; /* Mucho aire arriba y abajo para separar secciones */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Cabecera de Contacto --- */
+.contact-header {
+  text-align: center;
+  margin: 64px; /* Espacio entre el título y el formulario de abajo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* --- Etiqueta (Badge) --- */
+.contact-badge {
+  background-color: var(--bg-secondary);
+  color: var(--action-color);
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Título Principal --- */
+.contact-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--text-main);
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+/* Resalte de la palabra clave */
+.contact-title span {
+  color: var(--action-color);
+}
+
+/* ==========================================================================
+   ADAPTACIÓN MODO OSCURO (DARK MODE)
+   ========================================================================== */
+
+[data-theme='dark'] .catalog-header .concept-tag {
+  background-color: rgba(96, 165, 250, 0.2); /* Azul translúcido */
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  box-shadow: none;
+}
+
+[data-theme='dark'] .main-slogan span {
+  color: var(--dark-text-dim);
+}
+
+[data-theme='dark'] .contact-badge {
+  background-color: rgba(37, 99, 235, 0.1); /* Fondo azul translúcido */
+  border-color: rgba(37, 99, 235, 0.2);
+  color: #60a5fa; /* Azul claro para mejor legibilidad */
+  box-shadow: none;
+}

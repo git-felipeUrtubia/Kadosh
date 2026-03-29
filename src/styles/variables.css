@@ -1,0 +1,60 @@
+/* src/styles/variables.css */
+
+:root {
+  /* --- Primitivas de Color (Tonos Fijos) --- */
+  --white: #ffffff;
+  
+  /* Tonos Grises para modo claro */
+  --slate-50:  #f8fafc; 
+  --slate-100: #f1f5f9; 
+  --slate-200: #e2e8f0; 
+  --slate-600: #475569; 
+  --slate-800: #1e293b; 
+  --slate-900: #0f172a; 
+
+  /* NUEVA PRIMITIVA: Azul casi negro profundo para el fondo */
+  --slate-950: #020617; 
+
+  /* Tonos Grises para modo oscuro */
+  --dark-bg:        var(--slate-950); /* Antes era slate-900 */
+  --dark-bg-accent: var(--slate-900); /* Antes era slate-800 */
+  --dark-border:    #1e293b;          /* slate-800 para bordes sutiles */
+  --dark-text:      #f1f5f9; 
+  --dark-text-dim:  #94a3b8; 
+
+  /* Color de Acción */
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+
+  /* --- Variables Semánticas (Modo Claro) --- */
+  --bg-primary:    var(--white);
+  --bg-secondary:  var(--slate-50);
+  --bg-tercero:    var(--slate-200);
+  --text-main:     var(--slate-900);
+  --text-dim:      var(--slate-600);
+  --border-color:  var(--slate-200);
+  --action-color:  var(--blue-600);
+  --action-hover:  var(--blue-700);
+
+  /* Efectos Especiales Claros */
+  --nav-bg-rgb: 255, 255, 255;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* --- Variables Semánticas (Sobreescritura Modo Oscuro) --- */
+[data-theme='dark'] {
+  --bg-primary:    var(--dark-bg);
+  --bg-secondary:  var(--dark-bg-accent);
+  --text-main:     var(--dark-text);
+  --text-dim:      var(--dark-text-dim);
+  --border-color:  var(--dark-border);
+  
+  --action-color:  #60a5fa; /* Un azul un poco más vibrante para el modo oscuro */
+  --action-hover:  #93c5fd;
+
+  /* Efectos Especiales Oscuros */
+  --nav-bg-rgb: 2, 6, 23; /* RGB de var(--slate-950) */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}

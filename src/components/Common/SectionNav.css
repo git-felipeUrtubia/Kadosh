@@ -1,0 +1,98 @@
+/* src/components/Common/SectionNav.css */
+
+.dock-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;  
+  position: sticky;
+  top: 0; /* Se engancha justo debajo de tu NavBar principal */
+  z-index: 900;
+  padding: 24px;
+}
+
+.dock-container {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  background-color: var(--bg-primary); /* Blanco en Light / Deep Slate en Dark */
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Elementos de la Barra --- */
+.dock-item {
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  color: var(--text-dim);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.dock-icon {
+  font-size: 1.25rem;
+  stroke-width: 1.5;
+}
+
+.dock-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* --- Separador Vertical Técnico --- */
+.dock-divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--border-color);
+  opacity: 0.5;
+  margin: 0 4px;
+}
+
+/* ==========================================================================
+   OPTIMIZACIÓN DE INTERACCIONES (Modo Claro & Oscuro)
+   ========================================================================== */
+
+/* HOVER: Brillo interno en lugar de cambio de color de fondo pesado */
+.dock-item:hover:not(.active) {
+  color: var(--text-main);
+  background-color: var(--bg-tercero);
+}
+
+/* ACTIVE: El botón se ilumina con el color de marca */
+.dock-item.active {
+  color: var(--action-color);
+  background-color: rgba(37, 99, 235, 0.04);
+  font-weight: 700;
+}
+
+/* --- AJUSTES ESPECÍFICOS MODO OSCURO (DARK MODE) --- */
+[data-theme='dark'] .dock-container {
+  /* Fondo casi negro para no competir con el Hero */
+  background-color: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .dock-item:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+[data-theme='dark'] .dock-item.active {
+  /* En modo oscuro, el azul neón necesita más presencia */
+  color: #60a5fa;
+  background-color: rgba(59, 130, 246, 0.15);
+  /* Un borde de luz azul muy fino */
+  outline: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
+}

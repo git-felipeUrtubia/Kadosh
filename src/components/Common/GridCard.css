@@ -1,0 +1,21 @@
+.grid-container {
+  width: 100%;
+  /* 1. Alineación con el Hero y NavBar: usa el mismo max-width */
+  max-width: 1300px; 
+  margin: 0 auto;
+  
+  display: grid;
+  /* 2. Usamos auto-fill en lugar de auto-fit para que, si hay pocos productos, 
+     no se estiren de forma extraña para llenar el espacio. */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  
+  /* 3. Espaciado generoso para que el diseño "respire" */
+  gap: 2.5rem; 
+  
+  /* 4. Padding lateral para que en móviles las tarjetas no toquen los bordes */
+  padding: 2rem 24px; 
+  
+  /* 5. Asegura que todas las tarjetas de una fila tengan la misma altura */
+  align-items: stretch; 
+  justify-content: center;
+}

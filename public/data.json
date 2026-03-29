@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "nombre": "Auriculares Bluetooth G3",
+    "descripcion": "Auriculares inalámbricos con cancelación de ruido y batería de 40 horas.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Electrónica",
+    "precio": 89.99,
+    "stock": 15,
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "nombre": "Smartwatch Pro",
+    "descripcion": "Reloj inteligente con monitor de ritmo cardíaco y GPS integrado.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Electrónica",
+    "precio": 129.50,
+    "stock": 10,
+    "rating": 4.2
+  },
+  {
+    "id": 3,
+    "nombre": "Cafetera de Goteo",
+    "descripcion": "Cafetera automática con capacidad para 12 tazas y temporizador.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Hogar",
+    "precio": 45.00,
+    "stock": 25,
+    "rating": 4.8
+  },
+  {
+    "id": 4,
+    "nombre": "Set de Pesas 10kg",
+    "descripcion": "Mancuernas ajustables con revestimiento de neopreno antideslizante.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Deportes",
+    "precio": 35.99,
+    "stock": 50,
+    "rating": 4.7
+  },
+  {
+    "id": 5,
+    "nombre": "Teclado Mecánico RGB",
+    "descripcion": "Teclado gaming con switches rojos y retroiluminación personalizable.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Electrónica",
+    "precio": 75.00,
+    "stock": 12,
+    "rating": 4.6
+  },
+  {
+    "id": 6,
+    "nombre": "Lámpara de Escritorio LED",
+    "descripcion": "Lámpara con 3 modos de luz y puerto de carga USB.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Hogar",
+    "precio": 22.50,
+    "stock": 30,
+    "rating": 4.4
+  },
+  {
+    "id": 7,
+    "nombre": "Mat de Yoga Extra Grueso",
+    "descripcion": "Colchoneta de alta densidad para yoga y pilates, 6mm de grosor.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Deportes",
+    "precio": 19.99,
+    "stock": 40,
+    "rating": 4.9
+  },
+  {
+    "id": 8,
+    "nombre": "Cámara de Seguridad WiFi",
+    "descripcion": "Cámara IP con visión nocturna y detección de movimiento.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Electrónica",
+    "precio": 55.00,
+    "stock": 8,
+    "rating": 4.1
+  },
+  {
+    "id": 9,
+    "nombre": "Sartén de Hierro Fundido",
+    "descripcion": "Sartén pre-sazonado de 30cm ideal para cocina a fuego lento.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Hogar",
+    "precio": 38.00,
+    "stock": 18,
+    "rating": 4.7
+  },
+  {
+    "id": 10,
+    "nombre": "Balón de Fútbol Profesional",
+    "descripcion": "Balón de cuero sintético tamaño 5, certificado para competición.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Deportes",
+    "precio": 29.99,
+    "stock": 60,
+    "rating": 4.5
+  },
+  {
+    "id": 11,
+    "nombre": "Mouse Inalámbrico Ergonómico",
+    "descripcion": "Mouse óptico con sensor ajustable y diseño para reducir fatiga.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Electrónica",
+    "precio": 25.99,
+    "stock": 45,
+    "rating": 4.3
+  },
+  {
+    "id": 12,
+    "nombre": "Aspiradora Robot v2",
+    "descripcion": "Aspiradora inteligente con mapeo láser y control mediante app.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Hogar",
+    "precio": 199.99,
+    "stock": 5,
+    "rating": 4.6
+  },
+  {
+    "id": 13,
+    "nombre": "Cinta de Correr Plegable",
+    "descripcion": "Máquina de correr compacta con pantalla LCD y 12 programas.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Deportes",
+    "precio": 450.00,
+    "stock": 3,
+    "rating": 4.2
+  },
+  {
+    "id": 14,
+    "nombre": "Disco Duro Externo 2TB",
+    "descripcion": "Almacenamiento portátil USB 3.0 compatible con PC y Mac.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Electrónica",
+    "precio": 68.00,
+    "stock": 22,
+    "rating": 4.8
+  },
+  {
+    "id": 15,
+    "nombre": "Juego de Cuchillos de Cocina",
+    "descripcion": "Set de 5 cuchillos de acero inoxidable con soporte de madera.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Hogar",
+    "precio": 52.00,
+    "stock": 14,
+    "rating": 4.5
+  },
+  {
+    "id": 16,
+    "nombre": "Bicicleta de Montaña R29",
+    "descripcion": "Bicicleta con cuadro de aluminio, 21 velocidades y frenos de disco.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Deportes",
+    "precio": 320.00,
+    "stock": 7,
+    "rating": 4.7
+  },
+  {
+    "id": 17,
+    "nombre": "Monitor Gamer 24\" Curvo",
+    "descripcion": "Monitor Full HD con tasa de refresco de 144Hz y 1ms de respuesta.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Electrónica",
+    "precio": 160.00,
+    "stock": 11,
+    "rating": 4.6
+  },
+  {
+    "id": 18,
+    "nombre": "Humidificador Ultrasónico",
+    "descripcion": "Difusor de aromas silencioso con luces LED cambiantes.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Hogar",
+    "precio": 28.50,
+    "stock": 35,
+    "rating": 4.3
+  },
+  {
+    "id": 19,
+    "nombre": "Botella de Agua Térmica",
+    "descripcion": "Botella de acero inoxidable que mantiene el frío por 24 horas.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Deportes",
+    "precio": 15.00,
+    "stock": 100,
+    "rating": 4.9
+  },
+  {
+    "id": 20,
+    "nombre": "Licuadora de Alta Potencia",
+    "descripcion": "Licuadora con vaso de vidrio y 6 cuchillas para picar hielo.",
+    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
+    "categoria": "Hogar",
+    "precio": 59.90,
+    "stock": 20,
+    "rating": 4.4
+  }
+]

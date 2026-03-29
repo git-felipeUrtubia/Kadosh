@@ -1,0 +1,34 @@
+/* src/components/Contact/Contact.css */
+
+.contact-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 80px 24px;
+    /* Espaciado generoso superior e inferior */
+}
+
+.contact-grid {
+    width: 100%;
+    max-width: 1300px;
+    /* Alineado con tu catalog-container */
+    display: grid;
+    /* El formulario (2da columna) será un poco más ancho que la info (1ra columna) */
+    grid-template-columns: 1fr 1.3fr;
+    gap: 40px;
+    /* Separación entre ambas tarjetas */
+    align-items: stretch;
+    /* Asegura que ambas tarjetas midan lo mismo de alto si una crece */
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO (Móviles y Tablets)
+   ========================================================================== */
+
+/* Cuando la pantalla sea menor a 900px, pasamos a 1 sola columna */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}

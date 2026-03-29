@@ -1,0 +1,175 @@
+/* src/components/Common/NavBar/NavBar.css */
+
+/* ==========================================================================
+   1. Contenedor Principal (Header) - ESTILO CLARO
+   ========================================================================== */
+.main-header {
+  width: 100%;
+  /* Usamos explícitamente el color de fondo claro (var(--white)) */
+  background-color: var(--bg-primary);
+  
+  /* Línea divisoria inferior muy sutil para delimitar en blanco */
+  border-bottom: 1px solid var(--border-color);
+  
+  /* Sombra ultra suave para dar un toque de profundidad 'premium' */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.015);
+  
+  /* Transición suave por si acaso cambia a oscuro después */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* --- Contenedor Interno Centrado con Ancho Máximo Elegante --- */
+.nav-container {
+  max-width: 1300px; /* Limita el ancho en pantallas grandes */
+  margin: 0 auto; /* Centrar en la pantalla */
+  padding: 0 32px; /* Espaciado lateral */
+  height: 80px; /* Altura generosa y limpia */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Brand izq, Links centro, Acciones der */
+}
+
+/* ==========================================================================
+   2. Estilos del Logo (Brand)
+   ========================================================================== */
+.nav-brand {
+  cursor: pointer;
+  text-decoration: none; /* Por si lo envuelves en un <a> después */
+}
+
+.brand-text {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 1px; /* Espaciado moderno entre letras */
+  color: var(--text-main); /* slate-900 oscuro */
+}
+
+.brand-text .thin {
+  font-weight: 300; /* Parte fina del logo para contraste minimalista */
+  color: var(--text-dim); /* slate-600 gris */
+}
+
+/* ==========================================================================
+   3. Enlaces Centrales - NUEVA ANIMACIÓN DESDE EL CENTRO
+   ========================================================================== */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 32px; /* Espacio generoso entre palabras */
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-dim);
+  font-weight: 500;
+  font-size: 0.85rem; /* Letra un poco más pequeña elegante */
+  text-transform: uppercase; /* Todo en mayúsculas (Boutique Style) */
+  letter-spacing: 1.2px; /* Más aire entre letras al ser mayúsculas */
+  padding: 8px 0; /* Espacio arriba y abajo para la línea */
+  position: relative; /* Necesario para posicionar la línea inferior (::after) */
+  transition: color 0.2s ease;
+}
+
+/* Al pasar el mouse, solo cambiamos el color del texto */
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+/* --- La Línea Inferior (::after) --- */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%; /* La línea ocupará todo el ancho del texto */
+  height: 1px; /* Grosor minimalista de 1px */
+  bottom: 0;
+  left: 0;
+  background-color: var(--action-color); /* Tu color azul de acción */
+  
+  /* LOGICA DE INGENIERÍA PARA ANIMAR DESDE EL CENTRO:
+     1. Transform: scaleX(0) aplasta el elemento horizontalmente a 0 en su centro.
+     2. Transform-origin: center asegura que el punto de referencia sea el centro.
+     3. Animamos el transform, que es mucho más eficiente que animar el ancho. */
+  transform: scaleX(0); 
+  transform-origin: center; 
+  transition: transform 0.3s ease; /* Transición suave de 0.3s */
+}
+
+/* --- Estado Hover y Active: La línea se expande --- */
+.nav-link:hover::after,
+.nav-link.active::after {
+  /* ScaleX(1) restaura el elemento a su ancho total (100%) desde el centro */
+  transform: scaleX(1); 
+}
+
+/* Estilo para el enlace de la página actual */
+.nav-link.active {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   4. Estilos de Acciones (Derecha - Dummies visuales)
+   ========================================================================== */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio estrecho entre iconos */
+}
+
+/* Botones de icono minimalistas circulares */
+.action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-size: 1.25rem; /* Iconos de buen tamaño legible */
+  width: 44px;
+  height: 44px;
+  border-radius: 50%; /* Perfectamente circulares */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  /* Transiciones para color y fondo al hover */
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hover en botones de acción: Cambia color y fondo */
+.action-btn:hover {
+  color: var(--text-main);
+  background-color: var(--bg-tercero); /* slate-50 gris ultra suave */
+}
+
+/* --- Botón de Carrito Específico con Indicador Sutil --- */
+.cart-btn {
+  position: relative; /* Necesario para posicionar el punto indicador */
+}
+
+/* Punto indicador de items en el carrito (Dummy) */
+.cart-badge-dot {
+  position: absolute;
+  top: 10px; /* Ajuste preciso sobre el icono */
+  right: 10px;
+  width: 7px;
+  height: 7px;
+  background-color: var(--action-color); /* Tu color azul de acción */
+  border-radius: 50%;
+  
+  /* Pequeño truco: borde blanco alrededor para que no se pegue visualmente al icono */
+  border: 1px solid var(--bg-primary); 
+}
+
+/* Agrega esto a tu src/components/Common/NavBar/NavBar.css */
+
+.login-btn:hover {
+  color: var(--action-color); /* Cambia al azul de tu marca al pasar el mouse */
+  transform: scale(1.1);
+}
+
+/* En modo oscuro, aseguramos que el hover sea legible */
+[data-theme='dark'] .login-btn:hover {
+  color: #60a5fa; /* El azul más claro que configuramos para Dark Mode */
+}

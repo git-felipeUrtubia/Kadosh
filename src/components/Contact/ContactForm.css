@@ -1,0 +1,136 @@
+/* src/components/Contact/ContactForm.css */
+
+.contact-form {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+/* --- Cabecera del Formulario --- */
+.form-header h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.form-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+}
+
+/* --- Grupos de Inputs --- */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-left: 4px;
+}
+
+/* Estilos compartidos para Input y Textarea */
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+/* Placeholder sutil */
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: var(--text-dim);
+    opacity: 0.6;
+}
+
+/* --- Interacciones (Focus) --- */
+.input-group input:focus,
+.input-group textarea:focus {
+    background-color: var(--bg-primary);
+    border-color: var(--action-color);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    /* Anillo de foco */
+}
+
+/* Evitar que el textarea se redimensione horizontalmente */
+.input-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* --- Botón de Envío --- */
+.form-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+    margin-top: 8px;
+    background-color: var(--action-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.form-submit-btn:hover {
+    background-color: var(--action-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.send-icon {
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.form-submit-btn:hover .send-icon {
+    transform: translateX(4px) translateY(-4px);
+    /* Pequeña animación de enviar */
+}
+
+/* ==========================================================================
+   ADAPTACIÓN MODO OSCURO
+   ========================================================================== */
+[data-theme='dark'] .contact-form {
+    background-color: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(12px);
+}
+
+[data-theme='dark'] .input-group input,
+[data-theme='dark'] .input-group textarea {
+    background-color: rgba(15, 23, 42, 0.6);
+    /* Fondo oscuro translúcido para inputs */
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .input-group input:focus,
+[data-theme='dark'] .input-group textarea:focus {
+    background-color: rgba(15, 23, 42, 0.9);
+    border-color: var(--action-color);
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.15);
+}

@@ -1,0 +1,216 @@
+/* src/components/Auth/LoginForm.css */
+
+.login-wrapper {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px 32px;
+    width: 100%;
+    max-width: 400px;
+    /* Tamaño ideal para un login */
+    margin: 0 auto;
+    box-shadow: var(--shadow-md);
+}
+
+/* --- Cabecera --- */
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login-header h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+}
+
+.login-header p {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    margin: 0;
+}
+
+/* --- Formulario e Inputs --- */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.auth-input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-left: 4px;
+}
+
+/* Contenedor relativo para posicionar el icono */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    transition: color 0.3s ease;
+}
+
+/* El padding-left hace espacio para el icono */
+.input-with-icon input {
+    width: 100%;
+    padding: 14px 16px 14px 44px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.input-with-icon input::placeholder {
+    color: var(--text-dim);
+    opacity: 0.5;
+}
+
+/* Interacción de Foco */
+.input-with-icon input:focus {
+    background-color: var(--bg-primary);
+    border-color: var(--action-color);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.input-with-icon input:focus+.input-icon,
+.input-with-icon input:focus~.input-icon {
+    color: var(--action-color);
+}
+
+/* --- Opciones (Recordarme y Olvidé contraseña) --- */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -4px;
+    margin-bottom: 8px;
+}
+
+.forgot-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--action-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+    color: var(--action-hover);
+    text-decoration: underline;
+}
+
+/* Checkbox Nativo Oculto + Estilo Custom */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    accent-color: var(--action-color);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* --- Botón Principal --- */
+.login-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+    background-color: var(--action-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.login-submit-btn:hover {
+    background-color: var(--action-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+/* --- Footer --- */
+.login-footer {
+    margin-top: 24px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.login-footer p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    margin: 0;
+}
+
+.login-footer a {
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.login-footer a:hover {
+    color: var(--action-color);
+}
+
+/* ==========================================================================
+   ADAPTACIÓN MODO OSCURO
+   ========================================================================== */
+[data-theme='dark'] .login-wrapper {
+    background-color: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(12px);
+}
+
+[data-theme='dark'] .input-with-icon input {
+    background-color: rgba(15, 23, 42, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .input-with-icon input:focus {
+    background-color: rgba(15, 23, 42, 0.9);
+    border-color: var(--action-color);
+}
+
+[data-theme='dark'] .login-footer a {
+    color: #f1f5f9;
+}
+
+[data-theme='dark'] .login-footer a:hover {
+    color: #60a5fa;
+}
