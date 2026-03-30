@@ -21,68 +21,83 @@ const slidesData = [
         title: 'Hasta 40% OFF Tech',
         description: 'Actualiza tu setup con accesorios de diseño nórdico en oferta.',
         btnPrimary: 'Ver Ofertas',
-        btnSecondary: null // Ejemplo sin segundo botón
+        btnSecondary: null
     }
 ];
 
 export const Hero = () => {
 
-    const [indexImg, setIndexImg] = useState<number>(0)
+    const [slide, setSlide] = useState<number>(0)
 
-    // NOTA DE INGENIERÍA: Al ser solo diseño (sin lógica), 
-    // renderizaremos solo la primera slide para visualizar el estilo.
-    const activeSlide = slidesData[indexImg];
+    const handleClickDot = (e: React.MouseEvent<HTMLSpanElement>) => {
+        const id = e.currentTarget.id
+        setSlide(Number(id) * 100)
+    }
+
 
     return (
         <section className="hero-container">
             <div className="carousel-view">
 
-                {/* --- 1. La Pista de Slides (Conceptual) --- */}
-                <div className="carousel-track">
-                    {/* Slide Activa (Única visible por diseño actual) */}
-                    <article className="carousel-slide active">
 
-                        {/* Imagen de Fondo con Object-Fit */}
-                        <img src={activeSlide.image} alt={activeSlide.title} className="slide-image" loading="eager" />
+                <div
+                    className="carousel-track"
+                    style={{ transform: `translateX(-${slide}%)` }}
+                >
 
-                        {/* Capa de Texto (Overlay) - Posicionada abajo-izquierda */}
-                        <div className="slide-content-overlay">
-                            <div className="text-content">
-                                <span className="slide-subtitle">{activeSlide.subtitle}</span>
-                                <h2 className="slide-title">{activeSlide.title}</h2>
-                                <p className="slide-description">{activeSlide.description}</p>
+                    {slidesData.map(data => (
+                        <article className="carousel-slide" key={data.id}>
 
-                                {/* Botones de Acción */}
-                                <div className="slide-actions">
-                                    <button className="btn btn-primary">{activeSlide.btnPrimary}</button>
-                                    {activeSlide.btnSecondary && (
-                                        <button className="btn btn-secondary">{activeSlide.btnSecondary}</button>
-                                    )}
+                            <img src={data.image} alt={data.title} className="slide-image" loading="eager" />
+
+                            <div className="slide-content-overlay">
+                                <div className="text-content">
+                                    <span className="slide-subtitle">{data.subtitle}</span>
+                                    <h2 className="slide-title">{data.title}</h2>
+                                    <p className="slide-description">{data.description}</p>
+
+                                    {/* Botones de Acción */}
+                                    <div className="slide-actions">
+                                        <button className="btn btn-primary">{data.btnPrimary}</button>
+                                        {data.btnSecondary && (
+                                            <button className="btn btn-secondary">{data.btnSecondary}</button>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </article>
+                        </article>
+                    ))}
+
                 </div>
 
-                {/* --- 2. Flechas de Navegación (Dummies Visuales) --- */}
                 <div className="carousel-nav">
-                    <button className="nav-arrow prev-arrow" title="Anterior (Sin lógica)" onClick={() => setIndexImg(prev => prev <= 0 ? prev : prev - 1)}>
+                    <button
+                        className="nav-arrow prev-arrow"
+                        title="Anterior (Sin lógica)"
+                        onClick={() => setSlide((prev) => prev >= 0 ? prev - 100 : prev)}
+                    >
                         <FiChevronLeft />
                     </button>
-                    <button className="nav-arrow next-arrow" title="Siguiente (Sin lógica)" onClick={() => setIndexImg(prev => prev >= slidesData.length - 1 ? prev : prev + 1)}>
+                    <button
+                        className="nav-arrow next-arrow"
+                        title="Siguiente (Sin lógica)"
+                        onClick={() => setSlide((prev) => prev < (slidesData.length - 1) * 100 ? prev + 100 : prev)}
+                    >
                         <FiChevronRight />
                     </button>
                 </div>
 
                 {/* --- 3. Indicadores (Dots) (Dummies Visuales) --- */}
                 <div className="carousel-pagination">
-                    {/* Simulamos 5 dots */}
-                    <span className="dot active"></span>
-                    <span className="dot"></span>
-                    <span className="dot"></span>
-                    <span className="dot"></span>
-                    <span className="dot"></span>
+                    {slidesData.map((data, index) => (
+                        <span
+                            id={`${index}`}
+                            className={`dot ${slide / 100 === index ? 'active' : ''}`} key={data.id}
+                            onClick={(e) => handleClickDot(e)}
+                        >
+                        </span>
+                    ))}
                 </div>
 
             </div>

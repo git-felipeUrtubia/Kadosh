@@ -1,11 +1,9 @@
-/* src/components/Common/Hero/Hero.css */
 
-/* ==========================================================================
-   1. Contenedor Principal y Estructura del Carrusel
-   ========================================================================== */
+
+
 .hero-container {
   width: 100%;
-  padding: 32px; /* Margen generoso alrededor para el efecto 'inset' */
+  padding: 32px;
   display: flex;
   justify-content: center;
   transition: all 0.3s ease;
@@ -14,87 +12,71 @@
 .carousel-view {
   position: relative;
   width: 100%;
-  max-width: 1400px; /* Alineado con el max-width del NavBar container */
-  height: 60vh; /* Altura generosa pero no exagerada */
-  border-radius: 16px; /* Esquinas redondeadas 'premium' */
-  overflow: hidden; /* Corta todo lo que salga de la slide */
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); /* Sombra ultra suave */
-  border: 1px solid var(--border-color); /* Borde sutil para delimitar en blanco */
+  max-width: 1400px;
+  height: 60vh;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
 }
 
 .carousel-track {
-  display: flex; /* Para poner slides una al lado de la otra conceptualmente */
+  display: flex;
   width: 100%;
   height: 100%;
+  transition: 0.5s ease-in-out;
 }
 
-/* ==========================================================================
-   2. Diseño de la Slide Individual
-   ========================================================================== */
+
 .carousel-slide {
   position: relative;
   min-width: 100%;
   height: 100%;
-  display: none; /* Por defecto ocultamos todas conceptualmente */
-  background-color: var(--slate-50); /* Fondo suave por si falla la imagen */
+  background-color: var(--slate-50);
 }
 
-/* Solo mostramos la slide que tiene la clase 'active' */
-.carousel-slide.active {
-  display: block;
-}
-
-/* La Imagen de Fondo ocupará todo el contenedor sin deformarse */
 .slide-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Recorta la imagen para llenar el espacio, no la estira */
-  object-position: center; /* Centra la imagen */
+  object-fit: cover;
+  object-position: center;
 }
 
-/* --- Capa de Contenido (Texto) --- */
 .slide-content-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 48px; /* Mucho aire en los bordes */
-  
-  /* Degradado sutil de negro a transparente de abajo hacia arriba 
-     para asegurar que el texto blanco sea legible */
+  padding: 48px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-  
   display: flex;
-  align-items: flex-end; /* Alinea el contenido abajo */
+  align-items: flex-end;
 }
 
 .text-content {
-  max-width: 500px; /* Limita el ancho del texto para legibilidad */
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-  gap: 12px; /* Espaciado estrecho entre elementos de texto */
-  color: var(--white); /* Texto siempre blanco sobre la imagen */
+  gap: 12px;
+  color: var(--white);
 }
 
-/* Subtítulo (All Caps Minimalista) */
 .slide-subtitle {
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2.5px; /* Mucho aire entre letras */
-  opacity: 0.85; /* Un poco translúcido */
+  letter-spacing: 2.5px;
+  opacity: 0.85;
 }
 
-/* Título Principal Refinado */
 .slide-title {
-  font-size: 2.5rem; /* Tamaño grande e impactante */
-  font-weight: 800; /* Mucha negrita modernos pegando las letras */
+  font-size: 2.5rem;
+  font-weight: 800;
   letter-spacing: -1.5px;
   margin: 0;
-  line-height: 1.1; /* Texto compacto moderno */
+  line-height: 1.1;
 }
 
-/* Descripción */
 .slide-description {
   font-size: 0.95rem;
   font-weight: 400;
@@ -103,19 +85,16 @@
   margin: 0;
 }
 
-/* ==========================================================================
-   3. Botones de Acción (Dentro de la Slide)
-   ========================================================================== */
+
 .slide-actions {
   display: flex;
-  gap: 16px; /* Espacio entre botones */
+  gap: 16px;
   margin-top: 16px;
 }
 
-/* Estilos base de Botón Redondeado Minimalista */
 .btn {
   padding: 10px 24px;
-  border-radius: 20px; /* Bordes muy redondeados elegantes */
+  border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -125,7 +104,6 @@
   transition: all 0.2s ease;
 }
 
-/* Botón Primario (Lleno con tu azul de acción) */
 .btn-primary {
   background-color: var(--action-color);
   color: var(--white);
@@ -133,44 +111,37 @@
 
 .btn-primary:hover {
   background-color: var(--action-hover);
-  transform: translateY(-2px); /* Pequeño levante moderno */
+  transform: translateY(-2px);
 }
 
-/* Botón Secundario (Outline Blanco Minimalista) */
 .btn-secondary {
   background-color: transparent;
   color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.4); /* Borde blanco translúcido */
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .btn-secondary:hover {
   border-color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(255, 255, 255, 0.05); /* Fondo blanco ultra translúcido */
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* ==========================================================================
-   4. Navegación (Flechas) - Dummies Visuales
-   ========================================================================== */
+
 .carousel-nav {
   position: absolute;
-  top: 50%; /* Centradas verticalmente */
-  transform: translateY(-50%); /* Ajuste preciso del centro */
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
   display: flex;
-  justify-content: space-between; /* Izquierda y Derecha */
+  justify-content: space-between;
   padding: 0 16px;
-  pointer-events: none; /* Deja que el clic pase al resto de la slide conceptualmente */
+  pointer-events: none;
 }
 
-/* Botones de flecha redondos e integrados */
 .nav-arrow {
-  pointer-events: auto; /* Reactiva los clics dentro del botón */
-  background-color: rgba(255, 255, 255, 0.15); /* Fondo blanco ultra translúcido moderno */
-  
-  /* EFECTO PREMIUM: Desenfoque de fondo suave moderno */
+  pointer-events: auto;
+  background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px); /* Safari */
-  
+  -webkit-backdrop-filter: blur(5px);
   color: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.2);
   width: 44px;
@@ -185,45 +156,36 @@
 }
 
 .nav-arrow:hover {
-  background-color: rgba(255, 255, 255, 0.3); /* Un poco más de luz al hover */
-  transform: scale(1.05); /* Pequeño pulso */
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
-/* ==========================================================================
-   5. Paginación (Dots) - Dummies Visuales
-   ========================================================================== */
+
 .carousel-pagination {
   position: absolute;
-  bottom: 20px; /* Arriba de los botones de texto */
-  right: 48px; /* Alineado con el texto conceptualmente */
+  bottom: 20px;
+  right: 48px;
   display: flex;
   gap: 8px;
 }
 
-/* Dots minimalistas integrados */
 .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  
-  /* Fondo blanco translúcido con Glassmorphism suave modernos */
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(5px);
-  
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-/* Dot Activa (Totalmente blanca moderna) */
 .dot.active {
   background-color: var(--white);
-  transform: scale(1.2); /* Un poco más grande modernos pegando las letras */
+  transform: scale(1.2);
 }
 
-/* ==========================================================================
-   DISEÑO RESPONSIVO - TABLETS Y MÓVILES
-   ========================================================================== */
+
 
 /* Tablets (768px - 1024px) */
 @media (max-width: 1024px) {
