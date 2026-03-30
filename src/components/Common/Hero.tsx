@@ -22,6 +22,15 @@ const slidesData = [
         description: 'Actualiza tu setup con accesorios de diseño nórdico en oferta.',
         btnPrimary: 'Ver Ofertas',
         btnSecondary: null
+    },
+    {
+        id: 3,
+        image: 'https://images.pexels.com/photos/2043590/pexels-photo-2043590.jpeg?auto=compress&cs=tinysrgb&w=1600',
+        subtitle: 'OFERTA EXCLUSIVA',
+        title: 'Hasta 40% OFF Tech',
+        description: 'Actualiza tu setup con accesorios de diseño nórdico en oferta.',
+        btnPrimary: 'Ver Ofertas',
+        btnSecondary: null
     }
 ];
 
@@ -75,7 +84,7 @@ export const Hero = () => {
                     <button
                         className="nav-arrow prev-arrow"
                         title="Anterior (Sin lógica)"
-                        onClick={() => setSlide((prev) => prev >= 0 ? prev - 100 : prev)}
+                        onClick={() => setSlide((prev) => prev > 0 ? prev - 100 : prev)}
                     >
                         <FiChevronLeft />
                     </button>
