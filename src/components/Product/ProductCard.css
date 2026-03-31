@@ -1,286 +1,186 @@
 /* src/components/Product/ProductCard.css */
 
-.product-card-tech {
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 12px; /* Esquinas más técnicas, menos redondeadas */
+.card-classic {
   display: flex;
-  flex-direction: column;
-  height: 100%;
+  flex-direction: row;
+  background-color: #ffffff;
+  border-radius: 12px;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.product-card-tech:hover {
-  border-color: var(--action-color);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-}
-
-/* --- Imagen --- */
-.product-visual {
-  position: relative;
+  /* --- LA CLAVE MATEMÁTICA --- */
   width: 100%;
-  aspect-ratio: 1.2 / 1;
-  background-color: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
+  max-width: 700px;
+  min-height: 580px;
+  margin: 0 auto;
+
+  /* Sombra un poco más cálida y pronunciada */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product-img {
+.card-classic:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(34, 197, 94, 0.15);
+  /* Sombra con un levísimo tono verde al hacer hover */
+}
+
+/* --- Mitad Izquierda (Imagen Alta y Delgada) --- */
+.classic-img-wrapper {
+  flex: 1 1 50%;
+  overflow: hidden;
+  /* Necesario para que el zoom no se salga de la caja */
+}
+
+.classic-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  /* Transición suave para el zoom */
 }
 
-.product-card-tech:hover .product-img {
-  transform: scale(1.03);
+/* ¡NUEVO! Efecto vivo en la imagen al pasar el mouse por la tarjeta */
+.card-classic:hover .classic-img {
+  transform: scale(1.08);
 }
 
-.product-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--text-dim);
-}
-
-/* --- Cuerpo del texto --- */
-.product-details {
-  padding: 20px;
+/* --- Mitad Derecha (Textos) --- */
+.classic-content {
+  flex: 1 1 50%;
+  padding: 30px 20px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Esto empuja las acciones al fondo */
 }
 
-.product-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin-bottom: 8px;
-}
-
-.product-desc {
-  font-size: 0.85rem;
-  color: var(--text-dim);
-  line-height: 1.5;
-  margin-bottom: 16px;
-  /* Truncado a 2 líneas */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.product-price-tag {
-  margin-top: auto; /* El precio se ancla al final del bloque de texto */
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-}
-
-.currency { font-size: 0.9rem; font-weight: 600; color: var(--action-color); }
-.price-value { font-size: 1.4rem; font-weight: 800; color: var(--text-main); }
-
-/* --- Footer de Acciones (Botones alineados) --- */
-.product-actions {
-  padding: 0 20px 20px 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-  gap: 10px;
-}
-
-/* Estilo común de botones */
-.product-actions button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px;
-  border-radius: 8px;
+.classic-category {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 800;
+  /* Letra más gruesa */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #f97316;
+  /* ¡NUEVO COLOR VIVO! Naranja Mango */
+  margin-bottom: 16px;
+}
+
+.classic-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  /* Título con más fuerza */
+  line-height: 1.15;
+  color: #111827;
+  /* Gris casi negro, mayor contraste */
+  margin: 0 0 16px 0;
+}
+
+.classic-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+  /* Gris más legible y menos apagado */
+  margin: 0 0 24px 0;
+  flex-grow: 1;
+}
+
+/* --- Precios --- */
+.classic-price-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.classic-price-current {
+  font-size: 2rem;
+  /* Un poco más grande para destacar */
+  font-weight: 800;
+  color: #22c55e;
+  /* ¡NUEVO COLOR VIVO! Verde Manzana Fresco */
+}
+
+.classic-price-old {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  color: #9ca3af;
+  /* Gris claro para el precio viejo */
+}
+
+/* --- Botón --- */
+.classic-btn {
+  width: 100%;
+  background-color: #22c55e;
+  /* ¡NUEVO COLOR VIVO! Verde Manzana Fresco */
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  /* Bordes un poco más curvos, más amigables */
+  padding: 16px 10px;
+  font-size: 1rem;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
+  margin-top: auto;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  /* Sombra verde debajo del botón */
 }
 
-.btn-secondary {
-  background: transparent;
-  border: 1px solid var(--border-color);
-  color: var(--text-main);
-}
-
-.btn-secondary:hover {
-  background-color: var(--bg-secondary);
-}
-
-.btn-primary {
-  background-color: var(--action-color);
-  border: 1px solid var(--action-color);
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: var(--action-hover);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-}
-
-/* --- Ajuste Mejorado para Modo Oscuro --- */
-[data-theme='dark'] .product-card-tech {
-  /* Usamos el color de acento oscuro como base sólida */
-  background-color: var(--dark-bg-accent); 
-  border-color: rgba(255, 255, 255, 0.05); /* Borde casi invisible */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra profunda */
-}
-
-[data-theme='dark'] .product-visual {
-  /* El fondo de la imagen un poco más oscuro que la tarjeta para dar profundidad */
-  background-color: var(--dark-bg); 
-  border-bottom-color: rgba(255, 255, 255, 0.05);
-}
-
-[data-theme='dark'] .product-badge {
-  /* Badge que resalte: fondo oscuro con borde de luz */
-  background-color: var(--dark-bg);
-  border-color: var(--action-color);
-  color: var(--dark-text);
-}
-
-[data-theme='dark'] .btn-secondary {
-  /* Botón de detalles con borde sutil en modo oscuro */
-  border-color: var(--dark-border);
-  color: var(--dark-text-dim);
-}
-
-[data-theme='dark'] .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  color: var(--dark-text);
-  border-color: var(--dark-text-dim);
+.classic-btn:hover {
+  background-color: #16a34a;
+  /* Verde un poco más oscuro al hacer clic/hover */
+  transform: translateY(-2px);
+  /* El botón "salta" un poquito */
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
 }
 
 /* ==========================================================================
-   DISEÑO RESPONSIVO - TABLETS Y MÓVILES
+   MODO OSCURO (Automático según el sistema)
    ========================================================================== */
 
-/* Tablets (768px - 1024px) */
-@media (max-width: 1024px) {
-  .product-details {
-    padding: 16px;
-  }
-
-  .product-title {
-    font-size: 1rem;
-  }
-
-  .product-desc {
-    font-size: 0.8rem;
-  }
-
-  .currency {
-    font-size: 0.85rem;
-  }
-
-  .price-value {
-    font-size: 1.2rem;
-  }
-
-  .product-actions button {
-    padding: 8px;
-    font-size: 0.75rem;
-  }
+[data-theme='dark'] .card-classic {
+  /* Fondo oscuro elegante (gris azulado muy oscuro) */
+  background-color: #1f2937;
+  /* Cambiamos la sombra oscura por un resplandor muy sutil o la eliminamos */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  /* Opcional: un borde muy sutil para separar la tarjeta del fondo si el fondo de la app es del mismo color */
+  border: 1px solid #374151;
 }
 
-/* Teléfonos (móviles) - 768px y menores */
+[data-theme='dark'] .card-classic:hover {
+  /* En modo oscuro, el hover verde resalta aún mejor */
+  box-shadow: 0 15px 35px rgba(34, 197, 94, 0.2);
+}
+
+[data-theme='dark'] .classic-title {
+  /* Título casi blanco */
+  color: #f9fafb;
+}
+
+[data-theme='dark'] .classic-desc {
+  /* Descripción en gris claro para buena legibilidad */
+  color: #9ca3af;
+}
+
+[data-theme='dark'] .classic-price-old {
+  /* El precio tachado un poco más oscuro que la descripción para que no compita */
+  color: #6b7280;
+}
+
+
+/* --- RESPONSIVIDAD (Móviles) --- */
 @media (max-width: 768px) {
-  .product-badge {
-    padding: 3px 8px;
-    font-size: 0.6rem;
-    bottom: 8px;
-    left: 8px;
+  .card-classic {
+    flex-direction: column;
+    max-width: 100%;
+    min-height: auto;
   }
 
-  .product-details {
-    padding: 12px;
-  }
-
-  .product-title {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-  }
-
-  .product-desc {
-    font-size: 0.75rem;
-    margin-bottom: 12px;
-  }
-
-  .currency {
-    font-size: 0.75rem;
-  }
-
-  .price-value {
-    font-size: 1rem;
-  }
-
-  .product-actions {
-    padding: 0 12px 12px 12px;
-    gap: 8px;
-  }
-
-  .product-actions button {
-    padding: 6px;
-    font-size: 0.65rem;
-    border-radius: 6px;
-  }
-}
-
-/* Teléfonos muy pequeños (< 480px) */
-@media (max-width: 480px) {
-  .product-card-tech {
-    border-radius: 8px;
-  }
-
-  .product-visual {
-    aspect-ratio: 1 / 1;
-  }
-
-  .product-badge {
-    padding: 2px 6px;
-    font-size: 0.55rem;
-  }
-
-  .product-details {
-    padding: 10px;
-  }
-
-  .product-title {
-    font-size: 0.85rem;
-  }
-
-  .product-desc {
-    font-size: 0.7rem;
-    -webkit-line-clamp: 1;
-  }
-
-  .currency {
-    font-size: 0.65rem;
-  }
-
-  .price-value {
-    font-size: 0.9rem;
-  }
-
-  .product-actions {
-    padding: 0 10px 10px 10px;
-    gap: 6px;
-  }
-
-  .product-actions button {
-    padding: 5px;
-    font-size: 0.6rem;
+  .classic-img-wrapper {
+    height: 300px;
+    flex: none;
   }
 }

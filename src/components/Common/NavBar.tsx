@@ -75,7 +75,11 @@ export const NavBar = () => {
             {theme === 'light' ? <FiMoon /> : <FiSun />}
           </button>
 
-          <button className="action-btn cart-btn" title="Carrito">
+          <button
+            className="action-btn cart-btn"
+            title="Carrito"
+            onClick={() => nav('/cart')}
+          >
             <FiShoppingBag />
             <span className="cart-badge-dot"></span>
           </button>

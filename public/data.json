@@ -1,52 +1,52 @@
 [
   {
     "id": 1,
-    "nombre": "Auriculares Bluetooth G3",
-    "descripcion": "Auriculares inalámbricos con cancelación de ruido y batería de 40 horas.",
-    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
-    "categoria": "Electrónica",
-    "precio": 89.99,
-    "stock": 15,
-    "rating": 4.5
-  },
-  {
-    "id": 2,
-    "nombre": "Smartwatch Pro",
-    "descripcion": "Reloj inteligente con monitor de ritmo cardíaco y GPS integrado.",
-    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
-    "categoria": "Electrónica",
-    "precio": 129.50,
-    "stock": 10,
-    "rating": 4.2
-  },
-  {
-    "id": 3,
-    "nombre": "Cafetera de Goteo",
-    "descripcion": "Cafetera automática con capacidad para 12 tazas y temporizador.",
-    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
-    "categoria": "Hogar",
-    "precio": 45.00,
-    "stock": 25,
+    "nombre": "Manzana y Remolacha",
+    "descripcion": "El equilibrio perfecto. Pulpa de fruta y verdura deshidratada llena de antioxidantes.",
+    "image": "https://images.pexels.com/photos/6608617/pexels-photo-6608617.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "categoria": "Mix Natural",
+    "precio": 2800,
+    "stock": 45,
     "rating": 4.8
   },
   {
+    "id": 2,
+    "nombre": "Plátano Intenso",
+    "descripcion": "Energía rápida y natural. Pura pulpa de plátano deshidratado, sin azúcar añadida.",
+    "image": "https://images.pexels.com/photos/2872755/pexels-photo-2872755.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "categoria": "Fruta Deshidratada",
+    "precio": 2800,
+    "stock": 30,
+    "rating": 4.9
+  },
+  {
+    "id": 3,
+    "nombre": "Pera Suave",
+    "descripcion": "Un snack ligero y refrescante hecho con la mejor selección de peras deshidratadas.",
+    "image": "https://images.pexels.com/photos/5946081/pexels-photo-5946081.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "categoria": "Fruta Deshidratada",
+    "precio": 2500,
+    "stock": 20,
+    "rating": 4.5
+  },
+  {
     "id": 4,
-    "nombre": "Set de Pesas 10kg",
-    "descripcion": "Mancuernas ajustables con revestimiento de neopreno antideslizante.",
-    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
-    "categoria": "Deportes",
-    "precio": 35.99,
+    "nombre": "Zanahoria Dulce",
+    "descripcion": "Nutrición que se siente. Pulpa de verdura 100% natural para cuidar tu cuerpo.",
+    "image": "https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "categoria": "Verdura Deshidratada",
+    "precio": 2200,
     "stock": 50,
     "rating": 4.7
   },
   {
     "id": 5,
-    "nombre": "Teclado Mecánico RGB",
-    "descripcion": "Teclado gaming con switches rojos y retroiluminación personalizable.",
-    "image": "https://bbconstruction.com/wp-content/uploads/2024/04/placeholder.jpg",
-    "categoria": "Electrónica",
-    "precio": 75.00,
-    "stock": 12,
-    "rating": 4.6
+    "nombre": "Manzana Clásica",
+    "descripcion": "El sabor tradicional que nunca falla. Solo fruta deshidratada, textura increíble.",
+    "image": "https://images.pexels.com/photos/206959/pexels-photo-206959.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "categoria": "Fruta Deshidratada",
+    "precio": 2500,
+    "stock": 60,
+    "rating": 5.0
   }
 ]

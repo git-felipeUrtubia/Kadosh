@@ -1,0 +1,67 @@
+/* src/components/Cart/CarrouselAnimation.css */
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    /* Oculta todo lo que sale de los bordes de la pantalla */
+    background-color: var(--bg-primary, #ffffff);
+    padding: 40px 0;
+    /* Espaciado superior e inferior */
+    position: relative;
+    display: flex;
+}
+
+/* Opcional: Gradientes en los bordes para difuminar la entrada y salida de las tarjetas */
+.marquee-container::before,
+.marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    /* Para no bloquear clics */
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-primary, #ffffff), transparent);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-primary, #ffffff), transparent);
+}
+
+.marquee-track {
+    display: flex;
+    /* La animación: 30 segundos, velocidad constante (linear), bucle infinito */
+    animation: scroll-left 20s linear infinite;
+}
+
+/* Si el usuario hace hover sobre la cinta, la animación se pausa */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.marquee-content {
+    display: flex;
+    justify-content: space-around;
+    /* Aseguramos que el contenido ocupe el espacio necesario sin encogerse */
+    flex-shrink: 0;
+}
+
+/* La animación clave */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+        /* Empieza en la posición original */
+    }
+
+    100% {
+        /* Se mueve a la izquierda exactamente el ancho de UN .marquee-content (50% de la pista total).
+           Al llegar aquí, la ilusión es perfecta porque la segunda mitad es idéntica a la primera. */
+        transform: translateX(-50%);
+    }
+}

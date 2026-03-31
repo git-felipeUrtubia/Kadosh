@@ -1,19 +1,22 @@
 
-
-
-
 export interface Product {
-    id: string | number,
-    nombre: string,
-    descripcion: string,
-    image: string,
-    categoria: string,
-    precio: number,
-    stock: number,
-    rating: number
+  id: number,
+  nombre: string,
+  descripcion: string,
+  image: string,
+  categoria: string,
+  precio: number,
+  stock: number,
+  rating: number
 }
 
-
+export interface CardDrawerProps {
+  title: string;
+  description: string;
+  image?: string;
+  bgColor?: string;
+  textColor?: string;
+}
 
 
 
