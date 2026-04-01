@@ -9,13 +9,7 @@ interface ProductCardProp {
 
 export const ProductCard = ({ product }: ProductCardProp) => {
 
-
-  const { addToCart } = useCart()
-
-
-
-
-
+  const { addToCart } = useCart();
 
   return (
     <article className="card-classic" key={product.id}>
@@ -40,7 +34,7 @@ export const ProductCard = ({ product }: ProductCardProp) => {
         <button
           className="classic-btn"
           title="Añadir al carrito"
-          onClick={() => addToCart(product)}
+          onClick={ () => addToCart(product) }
         >
           <FiShoppingCart size={18} />
           <span>Add to Cart</span>

@@ -1,14 +1,17 @@
 // src/pages/Cart.tsx
 import './Cart.css';
 import { FiTrash2, FiPlus, FiMinus, FiArrowLeft, FiShoppingBag } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import { useCart } from '../hooks/useCart';
-import { Link } from 'react-router-dom'; // Asumiendo que usas react-router
+
 
 export const Cart = () => {
-    const { cart, updateQuantity, removeFromCart, cartTotal, cartCount } = useCart();
 
-    const shippingEstimate = cart.length > 0 ? 3500 : 0;
-    const finalTotal = cartTotal + shippingEstimate;
+    const shippingPrice: number = 1000
+
+    const { cart, updateQuantity, removeFromCart, cartTotal, cartCount } = useCart();
+    const priceFinal: number = cartTotal + shippingPrice;
+
 
     return (
         <div className="cart-page-wrapper">
@@ -73,14 +76,14 @@ export const Cart = () => {
                                         <div className="qty-control">
                                             <button
                                                 className="qty-btn"
-                                                onClick={() => updateQuantity(item.id, -1)}
+                                                onClick={() => updateQuantity(item.id, (item.quantity > 1 ? item.quantity - 1 : item.quantity))}
                                             >
                                                 <FiMinus size={14} />
                                             </button>
                                             <span className="qty-val">{item.quantity}</span>
                                             <button
                                                 className="qty-btn"
-                                                onClick={() => updateQuantity(item.id, 1)}
+                                                onClick={() => updateQuantity(item.id, (item.quantity > 0 ? item.quantity + 1 : item.quantity))}
                                             >
                                                 <FiPlus size={14} />
                                             </button>
@@ -107,19 +110,19 @@ export const Cart = () => {
                                 <h2 className="summary-title">Resumen de Orden</h2>
 
                                 <div className="summary-row">
-                                    <span>Subtotal ({cartCount} productos)</span>
-                                    <span>${cartTotal.toLocaleString('es-CL')}</span>
+                                    <span>Subtotal ({cartCount} {cartCount === 1 ? 'producto' : 'productos'})</span>
+                                    <span>${(cartTotal).toLocaleString('es-CL')}</span>
                                 </div>
                                 <div className="summary-row">
                                     <span>Envío estimado (Santiago)</span>
-                                    <span>${shippingEstimate.toLocaleString('es-CL')}</span>
+                                    <span>${(shippingPrice).toLocaleString('es-CL')}</span>
                                 </div>
 
                                 <div className="summary-divider"></div>
 
                                 <div className="summary-row total-row">
                                     <span>Total</span>
-                                    <span>${finalTotal.toLocaleString('es-CL')}</span>
+                                    <span>${(priceFinal).toLocaleString('es-CL')}</span>
                                 </div>
 
                                 <button className="checkout-main-btn">

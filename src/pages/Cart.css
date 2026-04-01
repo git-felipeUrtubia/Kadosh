@@ -259,6 +259,132 @@
     margin-top: 16px;
 }
 
+/* ==========================================================================
+   ADAPTACIÓN MODO OSCURO (DARK MODE)
+   ========================================================================== */
+
+[data-theme='dark'] .cart-page-wrapper {
+    background-color: var(--bg-secondary); /* Usa el fondo secundario del tema */
+    min-height: 100vh;
+    padding: 40px 20px;
+    transition: background-color 0.3s ease;
+}
+
+[data-theme='dark'] .cart-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+[data-theme='dark'] .cart-page-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-main); /* Cambia a blanco en modo oscuro */
+    margin: 0;
+}
+
+/* --- Columna Izquierda: Lista --- */
+[data-theme='dark'] .cart-items-section {
+    background: var(--bg-primary); /* Fondo principal de tarjeta */
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+[data-theme='dark'] .cart-table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 16px 24px;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-dim); /* Gris atenuado */
+    text-transform: uppercase;
+}
+
+[data-theme='dark'] .cart-page-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+}
+
+[data-theme='dark'] .item-name {
+    color: var(--text-main);
+}
+
+[data-theme='dark'] .item-category, .col-price {
+    color: var(--text-dim);
+}
+
+[data-theme='dark'] .col-total {
+    color: var(--text-main);
+}
+
+/* Controles de Cantidad */
+[data-theme='dark'] .qty-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 4px;
+    background-color: var(--bg-secondary);
+}
+
+[data-theme='dark'] .qty-btn {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    /* ... mismas dimensiones ... */
+}
+
+[data-theme='dark'] .qty-val {
+    color: var(--text-main);
+}
+
+/* --- Columna Derecha: Resumen --- */
+[data-theme='dark'] .summary-card {
+    background: var(--bg-primary);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    position: sticky;
+    top: 24px;
+}
+
+[data-theme='dark'] .summary-title {
+    color: var(--text-main); /* Blanco/Gris claro */
+}
+
+[data-theme='dark'] .summary-row {
+    color: var(--text-dim); /* Gris atenuado */
+}
+
+[data-theme='dark'] .total-row {
+    color: var(--text-main); /* Blanco/Gris claro */
+}
+
+[data-theme='dark'] .summary-divider {
+    background: var(--border-color);
+}
+
+[data-theme='dark'] .total-row span:last-child {
+    color: #22c55e; /* Mantenemos el verde vivo para el precio final */
+}
+
+/* Estado Vacío */
+[data-theme='dark'] .cart-empty-state {
+    background: var(--bg-primary);
+    color: var(--text-dim);
+    border: 1px solid var(--border-color);
+    /* ... centrado y padding ... */
+}
+
+
 /* --- RESPONSIVIDAD (Móviles) --- */
 @media (max-width: 968px) {
     .cart-layout {

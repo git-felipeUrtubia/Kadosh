@@ -5,13 +5,13 @@ export interface CartItem extends Product {
 }
 
 export interface CartContextType {
-    cart: CartItem[];
-    addToCart: (product: Product) => void;
-    removeFromCart: (id: number) => void;
-    updateQuantity: (id: number, delta: number) => void;
-    clearCart: () => void;
-    cartTotal: number;
-    cartCount: number;
-}
+  cart: CartItem[];
+  addToCart: (product: Product) => void;
+  removeFromCart: (id: number) => void;
+  updateQuantity: (id: number, delta: number) => void;
+  clearCart: () => void;
+  cartTotal: number;
+  cartCount: number;
+};
 
 
