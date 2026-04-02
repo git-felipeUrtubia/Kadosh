@@ -7,6 +7,7 @@ import { Login } from "../pages/Login";
 import { NotFound } from "../pages/NotFound";
 import { Footer } from "../components/Common/Footer";
 import { Cart } from "../pages/Cart";
+import { Checkout } from "../pages/Checkout";
 
 
 
@@ -30,6 +31,7 @@ export const AppRoutes = () => {
                         <Route path="/" element={<Navigate to="/home" />} />
                         <Route path="/home" element={<Home />} />
                         <Route path="/cart" element={<Cart />} />
+                        <Route path="/payment" element={<Checkout />}/>
 
                         <Route path="*" element={<NotFound />} />
                     </Route>

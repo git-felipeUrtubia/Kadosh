@@ -1,0 +1,217 @@
+/* src/pages/Checkout.css */
+
+.checkout-page-wrapper {
+    background-color: var(--bg-secondary);
+    min-height: 100vh;
+    padding: 40px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.checkout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.checkout-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.back-to-cart-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.back-to-cart-link:hover {
+    color: var(--action-color);
+}
+
+/* --- Layout Principal --- */
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+    align-items: start;
+}
+
+/* --- Formulario --- */
+.checkout-form {
+    background: var(--bg-primary);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.form-section {
+    margin-bottom: 32px;
+}
+
+.form-section:last-child {
+    margin-bottom: 0;
+}
+
+.form-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dim);
+}
+
+/* Inputs compatibles con Modo Oscuro */
+.input-group input,
+.input-group select {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-secondary);
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--action-color);
+}
+
+/* Radio Buttons de Pago */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--bg-secondary);
+    color: var(--text-main);
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.payment-option:hover {
+    border-color: var(--action-color);
+}
+
+/* --- Resumen de Orden --- */
+.checkout-summary-card {
+    background: var(--bg-primary);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    position: sticky;
+    top: 24px;
+}
+
+.checkout-items-mini {
+    margin-bottom: 20px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.mini-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: var(--text-dim);
+}
+
+.mini-item-info {
+    display: flex;
+    gap: 10px;
+}
+
+.mini-item-qty {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.place-order-btn {
+    width: 100%;
+    padding: 18px;
+    background-color: #22c55e;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 24px;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+    transition: all 0.2s ease;
+}
+
+.place-order-btn:hover {
+    background-color: #16a34a;
+    transform: translateY(-2px);
+}
+
+.secure-payment-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    color: #22c55e;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Responsividad */
+@media (max-width: 968px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}

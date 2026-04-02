@@ -126,7 +126,7 @@ export const Cart = () => {
                                 </div>
 
                                 <button className="checkout-main-btn">
-                                    Ir a Pagar
+                                    <Link style={{all: 'unset'}} to={"/payment"}>Ir a Pagar</Link>
                                 </button>
 
                                 <div className="secure-checkout-badge">
